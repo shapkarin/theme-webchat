@@ -15,16 +15,30 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASS, {
   }
 })
 
-const db = {};
+const db = {
+  models: {}
+};
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 //Models/tables
-db.messengerUsers = require('./models/MessengerUser')(sequelize, Sequelize);
+db.models.messengerUsers = require('./models/MessengerUser')(sequelize, Sequelize);
+db.models.messages = require('./models/Message')(sequelize, Sequelize);
+db.models.scenarios = require('./models/Scenario')(sequelize, Sequelize);
 
-// db.messengerUsers.findByPk(38).then(mu => {
-//   console.log(mu)
-// })
+Object.keys(db.models).forEach((modelKey) => {
+  const model = db.models[modelKey]
+  if (model.associate) {
+    model.associate(db.models)
+  }
+})
+
+db.models.messages.findOne({
+  where: { id: 151 },
+  include: ['scenario']
+}).then(mu => {
+  console.log(mu.scenario.id)
+})
 
 module.exports = db;

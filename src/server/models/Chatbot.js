@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-  const Chatbot = sequelize.define('chatbots', {
+const Chatbot = sequelize.define('chatbots', {
     greeting: {
       type: Sequelize.STRING
     },
