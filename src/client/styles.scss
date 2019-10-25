@@ -1,0 +1,66 @@
+$phone_height: 800px;
+$phone_width: $phone_height * 0.58333;
+
+@mixin centeredFlex {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin verticalFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  color: #3d3d3f;
+  background-color: salmon;
+  font-family: helvetica;
+  margin: 0;
+  padding: 0;
+}
+
+.container { 
+  @include verticalFlex;
+  flex-direction: column;
+  width: 80%; 
+  max-width: 1200px; 
+  margin: auto; 
+  height: 100vh;
+}
+
+#webchat-container {
+  @include centeredFlex;
+  @include verticalFlex;
+}
+
+.phone {
+  @include centeredFlex;
+  @include verticalFlex;
+  flex-direction: column;
+  padding-top: $phone_height * 0.02;
+  border-radius: 20px;
+  border: 1px solid #666;
+  background: linear-gradient(#000, #121212);
+  width: $phone_width;
+  height: $phone_height;
+
+  .screen {
+    border: 2px solid #eeb;
+    background-color: #fff;
+    width: $phone_width * 0.9;
+    height: $phone_height * 0.8;
+    border-radius: 2px;
+  }
+
+  .controls {
+    @include centeredFlex;
+    padding-top: $phone_height * 0.04;
+    .iphone-btn {
+      border-radius: 50%;
+      width: $phone_width * 0.1;
+      height: $phone_width * 0.1;
+      background-color: #fff;
+    }
+  }
+}

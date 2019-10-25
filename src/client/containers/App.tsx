@@ -21,17 +21,19 @@ const ChatbotSelect = () => (
 export default class App extends Component {
   render() {
     return (
-      <Router>
-        <h1>Theme Chatbot</h1>
-        <Switch>
-          <Route exact path="/app">
-            <ChatbotSelect />
-          </Route>
-        </Switch>
-        <Switch>
-          <Route path="/app/chatbots/:chatbotId" component={Webchat} />
-        </Switch>
-      </Router>
+      <div className="container">
+        <Router>
+          <h1>Theme Chatbot</h1>
+          <Switch>
+            <Route exact path="/app">
+              <ChatbotSelect />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route path="/app/chatbots/:chatbotId" component={Webchat} />
+          </Switch>
+        </Router>
+      </div>
     )
   }
 }

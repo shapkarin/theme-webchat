@@ -15,6 +15,15 @@ interface Props {
 export default class Webchat extends Component<Props> {
   render() {
     const { history } = this.props
-    return <h1>Webchat</h1>
+    return (
+      <div id="webchat-container">
+        <div className="phone">
+          <div className="screen"></div>
+          <div className="controls">
+            <div className="iphone-btn"></div>
+          </div>
+        </div>
+      </div>
+    )
   }
 }
