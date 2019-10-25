@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "devClient": "NODE_ENV=development ./node_modules/.bin/webpack --colors --progress --watch",
-    "devServer": "nodemon ./src/server"
+    "devServer": "nodemon ./src/server/server.js"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
