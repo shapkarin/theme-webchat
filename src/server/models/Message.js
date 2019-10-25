@@ -20,7 +20,7 @@ module.exports = (sequelize, Sequelize) => {
   });
 
   Message.associate = (models) => {
-    Message.belongsTo(models.scenarios, { foreignKey: 'scenario_id' });
+    Message.belongsTo(models.scenarios);
   }
 
   return Message;

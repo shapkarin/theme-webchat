@@ -7,18 +7,15 @@ const http = require('http').createServer(app)
 const path = require('path')
 const db = require('./db')
 
-// routes
-const rootRoutes = require('./routes/root')
-const appRoutes = require('./routes/app')
-
-
+app.locals.db = db
 
 // middleware
 app.use('/public', express.static(path.join(__dirname, '..', '..', 'dist')))
 
 // Router
-app.use('/', rootRoutes)
-app.use('/app', appRoutes)
+app.use('/', require('./routes/root'))
+app.use('/app', require('./routes/app'))
+app.use('/scenarios', require('./routes/scenarios')(db))
 
 http.listen(3000, function () {
   console.log('listening on *:3000')

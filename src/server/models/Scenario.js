@@ -14,6 +14,7 @@ module.exports = (sequelize, Sequelize) => {
   })
   Scenario.associate = (models) => {
     Scenario.hasMany(models.messages);
+    Scenario.belongsTo(models.chatbots);
   }
 
   return Scenario;

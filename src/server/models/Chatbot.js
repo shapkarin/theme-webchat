@@ -12,6 +12,10 @@ const Chatbot = sequelize.define('chatbots', {
   }, {
       underscored: true,
   });
+  
+  Chatbot.associate = (models) => {
+    Chatbot.hasMany(models.scenarios);
+  }
 
   return Chatbot;
 }

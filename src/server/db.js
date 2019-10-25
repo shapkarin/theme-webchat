@@ -26,6 +26,7 @@ db.sequelize = sequelize;
 db.models.messengerUsers = require('./models/MessengerUser')(sequelize, Sequelize);
 db.models.messages = require('./models/Message')(sequelize, Sequelize);
 db.models.scenarios = require('./models/Scenario')(sequelize, Sequelize);
+db.models.chatbots = require('./models/Chatbot')(sequelize, Sequelize);
 
 Object.keys(db.models).forEach((modelKey) => {
   const model = db.models[modelKey]
@@ -34,11 +35,18 @@ Object.keys(db.models).forEach((modelKey) => {
   }
 })
 
-db.models.messages.findOne({
-  where: { id: 151 },
-  include: ['scenario']
-}).then(mu => {
-  console.log(mu.scenario.id)
-})
+// db.models.messages.findOne({
+//   where: { id: 151 },
+//   include: ['scenario']
+// }).then(mu => {
+//   console.log(mu.scenario.id)
+// })
+
+// db.models.chatbots.findOne({
+//   where: { id: 9 },
+//   include: ['scenarios']
+// }).then(c => {
+//   console.log(c.scenarios.map(s => s.id))
+// })
 
 module.exports = db;
