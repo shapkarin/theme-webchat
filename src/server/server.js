@@ -1,10 +1,19 @@
+const dotenv = require('dotenv')
+dotenv.config()
+
 const express = require('express')
 const app = express()
 const http = require('http').createServer(app)
 const path = require('path')
+const db = require('./db')
+
+console.log('db', db)
+
 // routes
 const rootRoutes = require('./routes/root')
 const appRoutes = require('./routes/app')
+
+
 
 // middleware
 app.use('/public', express.static(path.join(__dirname, '..', '..', 'dist')))
