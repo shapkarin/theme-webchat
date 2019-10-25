@@ -6,7 +6,7 @@
   "author": "aburd <burdick.aaron@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "devClient": "./node_modules/.bin/webpack ",
+    "devClient": "NODE_ENV=development ./node_modules/.bin/webpack --colors --progress --watch",
     "devServer": "nodemon ./src/server"
   },
   "dependencies": {

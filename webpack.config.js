@@ -6,6 +6,8 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'dist.js'
   },
+  devtool: 'source-map',
+  mode: process.env.NODE_ENV,
   module: {
     rules: [
       {
