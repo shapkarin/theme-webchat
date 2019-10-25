@@ -1,6 +1,6 @@
 # Docs
 
-[To chatbot](/chatbots)
+[To app](/app)
 
 ## Goal
 
