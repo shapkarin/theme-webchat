@@ -3,11 +3,18 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
 } from "react-router-dom"
 
-export default class Webchat extends Component {
+interface Props {
+  history: any
+  location: any
+  match: any
+}
+
+export default class Webchat extends Component<Props> {
   render() {
+    const { history } = this.props
     return <h1>Webchat</h1>
   }
 }
