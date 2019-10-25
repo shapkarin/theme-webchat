@@ -1,4 +1,4 @@
-$phone_height: 800px;
+$phone_height: 700px;
 $phone_width: $phone_height * 0.58333;
 
 @mixin centeredFlex {
@@ -14,7 +14,7 @@ $phone_width: $phone_height * 0.58333;
 
 body {
   color: #3d3d3f;
-  background-color: salmon;
+  background: linear-gradient(#fa8072, #ffefd5);
   font-family: helvetica;
   margin: 0;
   padding: 0;
@@ -24,9 +24,9 @@ body {
   @include verticalFlex;
   flex-direction: column;
   width: 80%; 
+  height: 100vh;
   max-width: 1200px; 
   margin: auto; 
-  height: 100vh;
 }
 
 #webchat-container {
@@ -38,18 +38,19 @@ body {
   @include centeredFlex;
   @include verticalFlex;
   flex-direction: column;
-  padding-top: $phone_height * 0.02;
-  border-radius: 20px;
-  border: 1px solid #666;
-  background: linear-gradient(#000, #121212);
   width: $phone_width;
   height: $phone_height;
+  padding-top: $phone_height * 0.02;
+  background: linear-gradient(#000, #121212);
+  border-radius: 20px;
+  border: 1px solid #666;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
 
   .screen {
-    border: 2px solid #eeb;
-    background-color: #fff;
     width: $phone_width * 0.9;
     height: $phone_height * 0.8;
+    background-color: #fff;
+    border: 2px solid #eeb;
     border-radius: 2px;
   }
 
@@ -57,10 +58,11 @@ body {
     @include centeredFlex;
     padding-top: $phone_height * 0.04;
     .iphone-btn {
-      border-radius: 50%;
       width: $phone_width * 0.1;
       height: $phone_width * 0.1;
       background-color: #fff;
+      border-radius: 50%;
+      border: 4px solid #ddd;
     }
   }
 }
