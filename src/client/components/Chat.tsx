@@ -20,7 +20,7 @@ const girlStyles = {
   border: "pink",
   background: "#fbc",
   color: '#810000eb',
-  borderRadius: '20px';
+  borderRadius: '20px',
 }
 
 function switchMessage(message: Message, index: number) {
