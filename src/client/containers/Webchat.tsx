@@ -29,7 +29,7 @@ export default class Webchat extends Component<Props, State> {
   state = {
     unshownMessages: [],
     messages: [],
-    threshhold: Webchat.MSG_PUSH_THRESH_HOLD_MS,
+    threshhold: Webchat.MSG_PUSH_THRESH_HOLD_MS / 2,
     timerInterval: 0,
     debug: true,
   }
