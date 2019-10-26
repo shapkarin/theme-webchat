@@ -8,7 +8,12 @@ interface Props {
 
 function switchMessage(message: Message) {
   if (message.text) {
-    return <TextMessage {...message} />
+    return (
+      <TextMessage
+        key={message.id}
+        {...message}
+      />
+    )
   } else {
     return null
   }
