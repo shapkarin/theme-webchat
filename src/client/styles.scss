@@ -1,5 +1,6 @@
 $phone_height: 700px;
 $phone_width: $phone_height * 0.58333;
+$primary: #ab0101;
 
 @mixin centeredFlex {
   display: flex;
@@ -49,6 +50,25 @@ body {
     }
     .chat-container { width: 100%; }
   }
+}
+
+
+a {
+  color: $primary;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+button {
+  background: none;
+  border: 1px solid $primary;
+  margin: 5px 0;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+li {
+  list-style: none;
 }
 
 .phone {
