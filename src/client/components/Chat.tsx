@@ -1,6 +1,7 @@
 import React from 'react'
 import { Message } from '@src/types'
 import TextMessage from './TextMessage'
+import Icon from './Icon'
 
 interface Props {
   messages: Message[]
@@ -29,12 +30,16 @@ const styles = {
   girl: girlStyles,
 }
 
+const icons = {
+  nerd: 'http://pixelartmaker.com/art/e7e22b996482c10.png',
+  girl: 'https://as1.ftcdn.net/jpg/02/46/57/64/500_F_246576482_UHy9FOEZPNWG7cy9NPSKPMn5jE3MpHeA.jpg',
+}
+
 function switchMessage(
   message: Message,
-  index: number,
+  isUser: boolean,
   user: string
 ) {
-  const isUser = !!(index % 2)
   const botStyle = user ? styles[user] : false
   if (message.text) {
     return (
@@ -51,9 +56,20 @@ function switchMessage(
 }
 
 const Chat: React.SFC<Props> = ({ messages, user }) => {
+  const icon = user ? icons[user] : 'https://b.rgbimg.com/users/b/ba/barunpatro/600/mf6GB1O.jpg'
   return (
     <div className="chat-container">
-      {messages.map((m, i) => switchMessage(m, i, user))}
+      {messages.map((m, i) => {
+        const isUser = !!(i % 2)
+        return (
+          <div className={`message-container ${isUser ? '' : 'right'}`}>
+          <Icon
+            url={icon}
+            px={40}
+          />
+            {switchMessage(m, isUser, user)}
+        </div>
+      )})}
     </div>
   )
 }

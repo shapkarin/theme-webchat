@@ -19,7 +19,10 @@ body {
   padding: 0;
 }
 
-.right { text-align: right; }
+.right { 
+  text-align: right; 
+  justify-content: end; 
+}
 
 .container { 
   @include verticalFlex;
@@ -83,6 +86,10 @@ body {
   }
 }
 
+.message-container {
+  display: flex;
+}
+
 .message {
   margin: 2px 10px 20px;
 }
@@ -92,4 +99,12 @@ body {
     display: inline-block;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
   }
+}
+
+.user-icon {
+  display: block;
+  background: #E6E7ED;
+  border-radius: 20px;
+  background-position:50% 50%;
+  background-repeat:no-repeat; 
 }
