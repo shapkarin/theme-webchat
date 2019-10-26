@@ -82,7 +82,8 @@ export default class Webchat extends Component<Props, State> {
   }
 
   render() {
-    const { history } = this.props
+    const { location: { search } } = this.props
+    const query = new URLSearchParams(search)
     const {
       unshownMessages,
       messages,
@@ -110,7 +111,7 @@ export default class Webchat extends Component<Props, State> {
         <div className="phone-container">
           <div className="phone">
             <div className="screen">
-              <Chat messages={messages} />
+              <Chat messages={messages} user={query.get('user')} />
             </div>
             <div className="controls">
               <div className="iphone-btn"></div>

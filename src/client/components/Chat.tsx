@@ -4,6 +4,7 @@ import TextMessage from './TextMessage'
 
 interface Props {
   messages: Message[]
+  user: any
 }
 
 const nerdStyles = {
@@ -23,13 +24,23 @@ const girlStyles = {
   borderRadius: '20px',
 }
 
-function switchMessage(message: Message, index: number) {
+const styles = {
+  nerd: nerdStyles,
+  girl: girlStyles,
+}
+
+function switchMessage(
+  message: Message,
+  index: number,
+  user: string
+) {
   const isUser = !!(index % 2)
+  const botStyle = user ? styles[user] : false
   if (message.text) {
     return (
       <TextMessage
         key={message.id}
-        style={isUser ? false : girlStyles}
+        style={isUser ? false : botStyle}
         isUser={isUser}
         {...message}
       />
@@ -39,10 +50,10 @@ function switchMessage(message: Message, index: number) {
   }
 }
 
-const Chat: React.SFC<Props> = ({ messages }) => {
+const Chat: React.SFC<Props> = ({ messages, user }) => {
   return (
     <div className="chat-container">
-      {messages.map(switchMessage)}
+      {messages.map((m, i) => switchMessage(m, i, user))}
     </div>
   )
 }
