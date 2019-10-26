@@ -10,5 +10,16 @@ module.exports = (db) => {
         res.json(scenarios)
       })
   })
+  
+  router.get('/:id', function (req, res) {
+    const { id } = req.params
+    db.models.scenarios.findOne({
+      where: { id },
+      include: ['messages'],
+    })
+      .then(scenario => {
+        res.json(scenario)
+      })
+  })
   return router
 }
