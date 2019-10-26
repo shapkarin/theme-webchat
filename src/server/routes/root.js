@@ -7,7 +7,8 @@ const showdown = require('showdown'),
   text = '# hello, markdown!'
 
 router.get('/', function (req, res) {
-  fs.readFile(path.join(__dirname, '../intro.md'), 'utf8', (err, mdText) => {
+  const readmePath = path.join(__dirname, '..', '..', '..', 'README.md')
+  fs.readFile(readmePath, 'utf8', (err, mdText) => {
     if (err) console.error(err)
     res.send(`
       <style>.container { width: 80%; max-width: 1200px; margin: auto }</style>
