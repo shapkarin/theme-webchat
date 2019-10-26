@@ -1,7 +1,5 @@
 # Docs
 
-[To app](/app)
-
 ## Background
 
 Humans communicate in many ways other than words. A facial expression, a gesture...all these things can make the receiver feel differently.
@@ -48,3 +46,5 @@ Message object itself is regular JSON object from backend.
 
 1. Text Message
 2. Typing (didn't finish)
+
+[To app](/app)
