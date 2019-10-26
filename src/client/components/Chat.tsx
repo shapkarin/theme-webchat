@@ -56,17 +56,19 @@ function switchMessage(
 }
 
 const Chat: React.SFC<Props> = ({ messages, user }) => {
-  const icon = user ? icons[user] : 'https://b.rgbimg.com/users/b/ba/barunpatro/600/mf6GB1O.jpg'
+  const icon = user ? icons[user] : false
   return (
     <div className="chat-container">
       {messages.map((m, i) => {
         const isUser = !!(i % 2)
         return (
-          <div className={`message-container ${isUser ? '' : 'right'}`}>
-          <Icon
-            url={icon}
-            px={40}
-          />
+          <div className={`message-container ${isUser ? 'right' : ''}`}>
+            {isUser ? null : (
+              <Icon
+                url={icon}
+                px={40}
+              />
+            )}
             {switchMessage(m, isUser, user)}
         </div>
       )})}
