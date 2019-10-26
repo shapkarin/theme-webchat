@@ -20,10 +20,6 @@ body {
   padding: 0;
 }
 
-h1 {
-  margin-bottom: 65px;
-}
-
 .container { 
   @include verticalFlex;
   flex-direction: column;
@@ -31,15 +27,22 @@ h1 {
   height: 100vh;
   max-width: 1200px; 
   margin: auto; 
-}
 
-#webchat-container {
-  @include centeredFlex;
-  width: 100%;
-  > div { flex: 1 }
+  h1 {
+    max-height: 10vh;
+  }
 
-  .debug-container {
-    padding: 1rem;
+  #webchat-container {
+    @include centeredFlex;
+    max-height: 90vh;
+    overflow: auto;
+    width: 100%;
+    > div { 
+      flex: 1; 
+    }
+    .debug-container {
+      padding: 1rem;
+    }
   }
 }
 

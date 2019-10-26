@@ -25,13 +25,13 @@ interface State {
 }
 
 export default class Webchat extends Component<Props, State> {
-  static MSG_PUSH_THRESH_HOLD_MS = 2000
+  static MSG_PUSH_THRESH_HOLD_MS = 4000
   state = {
     unshownMessages: [],
     messages: [],
     threshhold: Webchat.MSG_PUSH_THRESH_HOLD_MS,
     timerInterval: 0,
-    debug: false,
+    debug: true,
   }
 
   componentDidMount() {
