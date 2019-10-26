@@ -20,6 +20,10 @@ body {
   padding: 0;
 }
 
+h1 {
+  margin-bottom: 65px;
+}
+
 .container { 
   @include verticalFlex;
   flex-direction: column;
@@ -31,7 +35,12 @@ body {
 
 #webchat-container {
   @include centeredFlex;
-  @include verticalFlex;
+  width: 100%;
+  > div { flex: 1 }
+
+  .debug-container {
+    padding: 1rem;
+  }
 }
 
 .phone {
