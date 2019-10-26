@@ -11,21 +11,33 @@ Chatbot based on demographics.
 - 20s person working in tech
 - 20s beauty-focused female
 
-### Messages
-
-- Text Message
-- Typing
 
 ## Server
 
-### - Express Server
+A regular API server
 
-### - Socket.io
+### Libs
+
+- Express
+- Sequelize
+- Dotenv
+
 
 ## Client
 
-### - Typescript
+### Libs
 
-### - React
+- Typescript
+- React
 
-### - Socket.io Client
+### Messages
+
+Changes style based on user object with `style` property on it. This could also be switched on some sort of demographic info, but is probably best handled by the server.
+
+Message object itself is regular JSON object from backend.
+
+
+### Mesage Types 
+
+1. Text Message
+2. Typing
