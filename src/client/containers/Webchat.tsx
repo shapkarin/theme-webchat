@@ -93,6 +93,7 @@ export default class Webchat extends Component<Props, State> {
     return (
       <div id="webchat-container">
         <div className='debug-container'>
+          <div><Link to={`/app`}>Back</Link></div>
           <button onClick={this.toggleDebug}>View Debug</button>
           {debug ? (
             <div>

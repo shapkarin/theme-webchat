@@ -10,10 +10,13 @@ import Webchat from './Webchat'
 const ChatbotSelect = () => (
   <ul>
     <li>
-      <Link to={`/app/chatbots/1`}>20s Tech Worker</Link>
+      <Link to={`/app/chatbots/1`}>Default</Link>
     </li>
     <li>
-      <Link to={`/app/chatbots/1`}>20s beauty focused female</Link>
+      <Link to={`/app/chatbots/1?user=nerd`}>20s Tech Worker</Link>
+    </li>
+    <li>
+      <Link to={`/app/chatbots/1?user=girl`}>20s beauty focused female</Link>
     </li>
   </ul>
 )
