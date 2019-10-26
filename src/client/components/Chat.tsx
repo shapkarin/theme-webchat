@@ -6,11 +6,31 @@ interface Props {
   messages: Message[]
 }
 
-function switchMessage(message: Message) {
+const nerdStyles = {
+  fontFamily: "'Press Start 2P', monospace",
+  padding: "10px 20px",
+  border: "4px solid #000",
+  background: "#eee",
+  color: '#000',
+}
+
+const girlStyles = {
+  fontFamily: "cursive",
+  padding: "10px 20px",
+  border: "pink",
+  background: "#fbc",
+  color: '#810000eb',
+  borderRadius: '20px';
+}
+
+function switchMessage(message: Message, index: number) {
+  const isUser = !!(index % 2)
   if (message.text) {
     return (
       <TextMessage
         key={message.id}
+        style={isUser ? false : girlStyles}
+        isUser={isUser}
         {...message}
       />
     )
