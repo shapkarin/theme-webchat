@@ -35,6 +35,8 @@ Object.keys(db.models).forEach((modelKey) => {
   }
 })
 
+db.sequelize.sync();
+
 // db.models.messages.findOne({
 //   where: { id: 151 },
 //   include: ['scenario']
